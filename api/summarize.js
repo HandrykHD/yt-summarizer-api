@@ -20,10 +20,28 @@ module.exports = async function handler(req, res) {
     let prompt, maxTokens;
 
     if (summaryType === 'short') {
-      prompt = `Fasse dieses YouTube-Video in 3-4 Sätzen zusammen. Maximal 500 Zeichen. Kein Markdown.\n\n${trimmed}`;
+      prompt = `Du bist Experte für präzise Zusammenfassungen. Fasse dieses YouTube-Video in maximal 3-4 Sätzen zusammen:
+
+WICHTIG: Halte die Zusammenfassung unter 500 Zeichen. Sei extrem prägnant aber informativ.
+
+Fokussiere auf:
+- Das Hauptthema in einem Satz
+- Die 2-3 wichtigsten Erkenntnisse
+- Eine kurze Schlussfolgerung
+
+Formatiere als einfachen Text ohne Markdown:\n${trimmed}`;
       maxTokens = 300;
     } else {
-      prompt = `Fasse dieses YouTube-Video strukturiert zusammen (max 1800 Zeichen, 4 Absätze):\n1. Hauptthema\n2. Kernpunkte\n3. Praktische Erkenntnisse\n4. Fazit\n\nKein Markdown, nur Fließtext mit Absätzen.\n\n${trimmed}`;
+      prompt = `Du bist Experte für Lernen und Zusammenfassungen. Fasse dieses YouTube-Video strukturiert zusammen:
+
+WICHTIG: Halte die Zusammenfassung unter 1800 Zeichen, um technische Limits einzuhalten.
+
+Gliedere die Zusammenfassung in maximal 4 prägnante Absätze:
+1. Hauptthema und Ziele des Videos (kurz)
+2. Kernpunkte und wichtige Konzepte konkret nennen 
+3. Praktische Erkenntnisse oder Beispiele konkret nennen 
+
+Formatiere als Markdown und sei präzise aber informativ:\n${trimmed}`;
       maxTokens = 1000;
     }
 
