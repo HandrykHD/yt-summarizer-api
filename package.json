@@ -1,0 +1,7 @@
+{
+  "name": "yt-summarizer-api",
+  "version": "1.0.0",
+  "dependencies": {
+    "openai": "^4.20.0"
+  }
+}
