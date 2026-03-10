@@ -36,7 +36,7 @@ Formatiere als einfachen Text ohne Markdown:\n${trimmed}`;
 
 WICHTIG: Halte die Zusammenfassung unter 1800 Zeichen, um technische Limits einzuhalten.
 
-Gliedere die Zusammenfassung in maximal 4 prägnante Absätze:
+Gliedere die Zusammenfassung in maximal 3 prägnante Absätze:
 1. Hauptthema und Ziele des Videos (kurz)
 2. Kernpunkte und wichtige Konzepte konkret nennen 
 3. Praktische Erkenntnisse oder Beispiele konkret nennen 
