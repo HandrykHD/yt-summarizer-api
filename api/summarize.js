@@ -7,7 +7,9 @@ const openai = new OpenAI({
 module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Nur POST erlaubt' });
-
+  if (req.headers['x-api-secret'] !== process.env.API_SECRET) {
+    return res.status(403).json({ error: 'Unauthorized' });
+  
   try {
     const { transcript, summaryType } = req.body;
     if (!transcript) return res.status(400).json({ error: 'Kein Transkript übergeben' });
