@@ -34,16 +34,26 @@ Fokussiere auf:
 Formatiere als einfachen Text ohne Markdown:\n${trimmed}`;
       maxTokens = 300;
     } else {
-      prompt = `Du bist Experte für Lernen und Zusammenfassungen. Fasse dieses YouTube-Video strukturiert zusammen:
+      prompt = `Du bist Experte für Wissensextraktion. Deine Aufgabe: Fasse das Video so zusammen, dass der Nutzer es nicht mehr schauen muss und trotzdem das vollständige Wissen daraus mitnimmt.
 
-WICHTIG: Halte die Zusammenfassung unter 1800 Zeichen, um technische Limits einzuhalten.
+WICHTIG: Halte die Zusammenfassung unter 1800 Zeichen.
 
-Gliedere die Zusammenfassung in maximal 3 prägnante Absätze:
-1. Hauptthema und Ziele des Videos (kurz)
-2. Kernpunkte und wichtige Konzepte konkret nennen 
-3. Praktische Erkenntnisse oder Beispiele konkret nennen 
+Gliedere in genau 3 Abschnitte mit Markdown:
 
-Formatiere als Markdown und sei präzise aber informativ:\n${trimmed}`;
+1. Worum geht es? (2-3 Sätze)
+Hauptthema, Kontext und was das Video verspricht.
+
+2. Konkrete Techniken & Methoden
+Liste jede im Video genannte Technik, Methode oder Strategie als Bullet Point auf. Keine vagen Umschreibungen — nenne die exakten Namen, Schritte oder Frameworks. Wenn Zahlen, Dosierungen, Zeitangaben oder Parameter genannt werden, übernimm sie.
+
+3. Kernerkenntnisse — Was muss man wissen?
+Die wichtigsten Einsichten, die über bloße Tipps hinausgehen. Was ist die zentrale Erkenntnis, die man sonst erst durch Anschauen des Videos verstanden hätte? Wenn das Video Fehler oder Mythen anspricht, benenne sie konkret.
+
+Regeln:
+
+Sei spezifisch, nicht generisch. "Man sollte mehr trainieren" ist wertlos. "3x pro Woche Ganzkörpertraining mit progressiver Überlast von 2.5kg pro Woche" ist nützlich.
+Wenn das Video keine konkreten Techniken enthält, sag das ehrlich.
+Formatiere als Markdown mit fetten Schlüsselbegriffen.\n${trimmed}`;
       maxTokens = 1000;
     }
 
