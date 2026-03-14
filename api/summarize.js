@@ -53,7 +53,7 @@ Regeln:
 
 Sei spezifisch, nicht generisch. "Man sollte mehr trainieren" ist wertlos. "3x pro Woche Ganzkörpertraining mit progressiver Überlast von 2.5kg pro Woche" ist nützlich.
 Wenn das Video keine konkreten Techniken enthält, sag das ehrlich.
-Formatiere als Markdown mit fetten Schlüsselbegriffen.\n${trimmed}`;
+Formatiere ohne Markdown.\n${trimmed}`;
       maxTokens = 1000;
     }
 
